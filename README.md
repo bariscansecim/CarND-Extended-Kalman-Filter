@@ -3,7 +3,7 @@ Self-Driving Car Engineer Nanodegree Program
 
 In this project you will utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower than the tolerance outlined in the project rubric. 
 
-This project involves the Term 2 Simulator which can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases)
+This project involves the Term 2 Simulator which can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases).
 
 This repository includes two files that can be used to set up and install [uWebSocketIO](https://github.com/uWebSockets/uWebSockets) for either Linux or Mac systems. For windows you can use either Docker, VMware, or even [Windows 10 Bash on Ubuntu](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) to install uWebSocketIO. Please see the uWebSocketIO Starter Guide page in the classroom within the EKF Project lesson for the required version and installation scripts.
 
@@ -24,18 +24,23 @@ The program main.cpp has already been filled out, but feel free to modify it.
 Here is the main protocol that main.cpp uses for uWebSocketIO in communicating with the simulator.
 
 
-INPUT: values provided by the simulator to the c++ program
+**INPUT**: values provided by the simulator to the c++ program
 
 ["sensor_measurement"] => the measurement that the simulator observed (either lidar or radar)
 
 
-OUTPUT: values provided by the c++ program to the simulator
+**OUTPUT**: values provided by the c++ program to the simulator
 
 ["estimate_x"] <= kalman filter estimated position x
+
 ["estimate_y"] <= kalman filter estimated position y
+
 ["rmse_x"]
+
 ["rmse_y"]
+
 ["rmse_vx"]
+
 ["rmse_vy"]
 
 ---
@@ -87,8 +92,8 @@ Matlab scripts that can generate additional data.
 Note: regardless of the changes you make, your project must be buildable using
 cmake and make!
 
-More information is only accessible by people who are already enrolled in Term 2
-of CarND. If you are enrolled, see [the project resources page](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/382ebfd6-1d55-4487-84a5-b6a5a4ba1e47)
+More information is only accessible by people who are already enrolled in Term 2 (three-term version) or Term 1 (two-term version)
+of CarND. If you are enrolled, see the Project Resources page in the classroom
 for instructions and the project rubric.
 
 ## Hints and Tips!
@@ -124,6 +129,20 @@ and how to install it.
 Regardless of the IDE used, every submitted project must
 still be compilable with cmake and make.
 
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+[//]: # (Image References)
+
+[image1]: ./pics/dataset1.PNG "Dataset1"
+[image2]: ./pics/dataset2.PNG "Dataset2"
+
+## Results
+
+### px, py, vx, vy output coordinates must have an RMSE <= [.11, .11, 0.52, 0.52] when using the file: "obj_pose-laser-radar-synthetic-input.txt which is the same data file the simulator uses for Dataset 1"
+
+My EKF accuracy was:
+
+- Dataset 1 : RMSE <= [0.0973, 0.0855, 0.4513, 0.4399]
+- Dataset 2 : RMSE <= [0.0726, 0.0965, 0.4216, 0.4932]
+
+![alt text][image1]
+![alt text][image2]
 
